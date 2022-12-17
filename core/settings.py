@@ -30,8 +30,8 @@ DEBUG = env('DEBUG')
 ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets')
 
 # load production server from .env
-ALLOWED_HOSTS = ['localhost',  '164.92.213.75', env('SERVER', default='164.92.213.75')]
-CSRF_TRUSTED_ORIGINS = ['http://localhost:85', 'http://164.92.213.75', 'https://' + env('SERVER', default='164.92.213.75')]
+ALLOWED_HOSTS = ['164.92.213.75', env('SERVER', default='164.92.213.75')]
+CSRF_TRUSTED_ORIGINS = ['http://164.92.213.75', 'https://' + env('SERVER', default='164.92.213.75')]
 
 # Application definition
 
