@@ -21,7 +21,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY', default='palsik86')
 
 # OPENAI KEY: keep the secret key used in production secret!
-OPENAI_API_KEYS = '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'
+OPENAI_API_KEYS = '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'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
@@ -30,8 +30,8 @@ DEBUG = env('DEBUG')
 ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets')
 
 # load production server from .env
-ALLOWED_HOSTS = ['localhost', 'localhost:85', '127.0.0.1', env('SERVER', default='127.0.0.1')]
-CSRF_TRUSTED_ORIGINS = ['http://localhost:85', 'http://127.0.0.1', 'https://' + env('SERVER', default='127.0.0.1')]
+ALLOWED_HOSTS = ['localhost',  '164.92.213.75', env('SERVER', default='164.92.213.75')]
+CSRF_TRUSTED_ORIGINS = ['http://localhost:85', 'http://164.92.213.75', 'https://' + env('SERVER', default='164.92.213.75')]
 
 # Application definition
 
@@ -86,28 +86,28 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'core.wsgi.application'
+# WSGI_APPLICATION = 'wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 # my secret key
 # SECRET_KEY = os.getenv("SECRET_KEY")
-if os.environ.get('DB_ENGINE') and os.environ.get('DB_ENGINE') == "postgreSQL":
+if os.environ.get('DB_ENGINE') and os.environ.get('DB_ENGINE') == "mysql":
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.getenv('DB_NAME', 'palstekAi'),
-            'USER': os.getenv('DB_USERNAME', 'postgres'),
-            'PASSWORD': os.getenv('DB_PASS', 'palsik86'),
-            'HOST': os.getenv('DB_HOST', 'localhost'),
-            'PORT': os.getenv('DB_PORT', 5432),
+      'default': {
+        'ENGINE'  : 'django.db.backends.mysql',
+        'NAME'    : os.getenv('DB_NAME'     , 'appseed_db'),
+        'USER'    : os.getenv('DB_USERNAME' , 'appseed_db_usr'),
+        'PASSWORD': os.getenv('DB_PASS'     , 'pass'),
+        'HOST'    : os.getenv('DB_HOST'     , 'localhost'),
+        'PORT'    : os.getenv('DB_PORT'     , ),
         },
     }
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'palstekAi',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'db.sqlite3',
         }
     }
 
