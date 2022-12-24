@@ -21,7 +21,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY', default='palsik86')
 
 # OPENAI KEY: keep the secret key used in production secret!
-OPENAI_API_KEYS = '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'
+OPENAI_API_KEYS = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
