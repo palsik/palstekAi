@@ -143,3 +143,48 @@ def generatedBlogSectionDetails(blogTopic, SectionTopic, audience, keywords):
             # print(len(blog_topics))
 
     return blog_Sections
+
+def checkCountAllowance(profile):
+    if profile.subscribed:
+        ## User has a subscription
+        type = profile.subscriptionType
+        if type == 'free':
+            max_limit = 5000
+            if profile.monthlyCount:
+                if int(profile.monthlyCount) < max_limit:
+                    return True
+                else:
+                    return False
+            else:
+                return True
+
+        elif type == 'starter':
+            max_limit = 40000
+            if profile.monthlyCount:
+                if int(profile.monthlyCount) < max_limit:
+                    return True
+                else:
+                    return False
+            else:
+                return True
+        elif type == 'advanced':
+            return True
+        else:
+            return False
+    else:
+        max_limit = 5000
+        if profile.monthlyCount:
+            if int(profile.monthlyCount) < max_limit:
+                return True
+            else:
+                return False
+        else:
+            return True
+
+
+
+
+
+    monthlyCount
+    subscribed
+    subscriptionType

@@ -23,21 +23,31 @@ from apps.home.functions import *
 def index(request):
     emptyBlogs = []
     completedBlogs = []
+    monthCount = 0
 
     blogs = Blog.objects.filter(profile=request.user.Profile)
     for blog in blogs:
         sections = BlogSection.objects.filter(blog=blog)
         if sections.exists():
-            blog.words = len(blog.title.split(' '))
+            ## Calculate Blog Words
+            blogwords = 0
+            for section in sections:
+                blogwords += int(section.wordcount)
+                monthCount += int(section.wordcount)
+            blog.wordcount = str(blogwords)
+            blog.save()
             completedBlogs.append(blog)
         else:
             emptyBlogs.append(blog)
+
+    allowance = checkCountAllowance(request.user.Profile)
     context = {'segment': 'index'}
 
-    context['numBlogs'] = 4
-    context['monthCount'] = 1242
+    context['numBlogs'] = len(completedBlogs)
+    context['monthCount'] = str(monthCount) ##update later
     context['emptyBlogs'] = emptyBlogs
     context['completedBlogs'] = completedBlogs
+    context['allowance'] = allowance
 
     html_template = loader.get_template('home/index2.html')
     # html_template = loader.get_template('home/profile.html')

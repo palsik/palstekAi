@@ -17,7 +17,7 @@ urlpatterns = [
     # Saving blog Topic for future use
     path('save-blog-topic/<str:uniqueId>', views.deleteBlogTopic, name='delete-blog-topic'),
 
-path('gen-frm-blog-topic/<str:uniqueId>', views.genBlogFrmsvtopic, name='gen-blog-frm-topic'),
+    path('gen-frm-blog-topic/<str:uniqueId>', views.genBlogFrmsvtopic, name='gen-blog-frm-topic'),
 
     path('save-blog-topic/<str:blogTopic>', views.saveBlogTopic, name='save-blog-topic'),
 

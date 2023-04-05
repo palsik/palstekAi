@@ -17,6 +17,11 @@ from uuid import uuid4
 
 # Create your models here.
 class Profile(models.Model):
+    SUBSCRIPTION_OPTIONS = [
+        ('free', 'free'),
+        ('starter', 'starter'),
+        ('advanced', 'advanced'),
+    ]
     user = models.OneToOneField(User, related_name='Profile', on_delete=models.CASCADE)
     # addressline1 = models.CharField(null=True, blank=True, max_length=100)
     # addressline2 = models.CharField(null=True, blank=True, max_length=100)
@@ -32,6 +37,11 @@ class Profile(models.Model):
     lastname = models.CharField(null=True, blank=True, max_length=100)
     address = models.CharField(null=True, blank=True, max_length=100)
     aboutinfo = models.CharField(null=True, blank=True, max_length=250)
+
+    ##Subscription Helpers
+    monthlyCount = models.CharField(null=True, blank=True, max_length=100)
+    subscribed = models.BooleanField(default=False)
+    subscriptionType = models.CharField(choices=SUBSCRIPTION_OPTIONS, default='free', max_length=100)
 
     # Utility Variable
     uniqueId = models.CharField(null=True, blank=True, max_length=300)
@@ -86,6 +96,7 @@ class Blog(models.Model):
 class BlogSection(models.Model):
     title = models.CharField(max_length=200)
     body = models.TextField(null=True, blank=True, max_length=200)
+    wordcount = models.CharField(null=True, max_length=200)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
 
     uniqueId = models.CharField(null=True, blank=True, max_length=100)
@@ -105,4 +116,8 @@ class BlogSection(models.Model):
 
         self.slug = slugify('{} {}'.format(self.title, self.uniqueId))
         self.last_updated = timezone.localtime(timezone.now())
+        ##Count words
+        if self.body:
+            x = len(self.body.split(' '))
+            self.wordcount = str(x)
         super(BlogSection, self).save(*args, **kwargs)

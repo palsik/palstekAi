@@ -20,7 +20,15 @@
 {#                    <a href="/" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span#}
 {#                            class="pcoded-mtext">Dashboard</span></a>#}
 {#                </li>#}
-                <li data-username="Profile Page" 
+
+               <li data-username="Profile Page"
+                    class="nav-item {% if 'profile' in segment %} active {% endif %}">
+                    <a href={% url 'home' %} class="nav-link">
+                        <span class="pcoded-micon"><i class="feather icon-monitor"></i></span>
+                            <span class="pcoded-mtext">DashBoard</span></a>
+                </li>
+
+                <li data-username="Profile Page"
                     class="nav-item {% if 'profile' in segment %} active {% endif %}">
                     <a href={% url 'submit-profile' %} class="nav-link">
                         <span class="pcoded-micon"><i class="feather icon-user"></i></span>
