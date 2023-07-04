@@ -2,11 +2,13 @@
 
 **PalstekAi** is an advanced AI-powered tool designed to generate high-quality, organic-like blogs for SEO (Search Engine Optimization). With the help of OpenAI technology, this tool provides a user-friendly interface to assist you in creating engaging blog content that is free from plagiarism. PalstekAi helps you enhance your website's search engine rankings by generating well-distributed and keyword-rich blogs.
 
-## Key Features
+## Key Features![1](https://github.com/palsik/palstekAi/assets/11665774/2c561fd7-c1d1-45ba-9234-db82718530b2)
+
 
 - **Keyword Suggestions**: PalstekAi allows you to input keywords that are relevant to your blog topic. These keywords play a crucial role in improving SEO and attracting organic traffic to your website.
 
 - **Topic Generation**: Based on the provided keywords, PalstekAi generates a list of suitable topics that you can choose from for your blog. This feature assists in brainstorming ideas and ensures you have a diverse range of topics to select from.
+![2](https://github.com/palsik/palstekAi/assets/11665774/cc148b39-b7c6-4ba3-ace8-10e2aee4dc3d)
 
 - **Topic Selection**: Once the topic list is generated, you can choose a specific topic that aligns with your requirements. PalstekAi makes it easy to find the most suitable topic for your blog.
 
@@ -17,10 +19,13 @@
 - **Subtopic Selection**: From the generated list of subtopics, you can choose the ones that you find most relevant and useful for your blog. This flexibility allows you to customize your blog content and focus on specific areas of interest.
 
 - **Blog Generation**: Once you have selected the main topic and subtopics, PalstekAi utilizes OpenAI technology to generate a full blog based on your inputs. The generated content is of exceptionally high quality and ensures a coherent flow throughout the blog.
+![4](https://github.com/palsik/palstekAi/assets/11665774/0b5bbf67-a7d7-487d-a7fa-1001d05fe26e)
+[screen-capture (1).webm](https://github.com/palsik/palstekAi/assets/11665774/8636a573-f3b3-4d7a-aedf-5191f5517888)
 
 - **Keyword Distribution**: PalstekAi intelligently distributes the provided keywords within the generated blog content. This optimization enhances the SEO value of your blog and helps search engines recognize the relevance of your content.
 
 - **Word Count and Blog Count**: PalstekAi tracks the word count for each generated blog and maintains a count of total blogs created. This feature is useful for billing purposes and gives you an overview of your content production.
+![4](https://github.com/palsik/palstekAi/assets/11665774/7aa43628-cc28-445f-8816-96e7e02defe2)
 
 - **Save Blogs**: PalstekAi enables you to save the generated blogs for later use. This feature allows you to build a library of pre-generated content, saving you time and effort in the future.
 
